@@ -13,14 +13,20 @@ You should use ```getStaticProps``` if:
 
 ```javascript
 import { GetStaticProps } from 'next'
+import { InferGetStaticPropsType } from 'next'
+
+type Post = {
+  author: string
+  content: string
+}
 
 export const getStaticProps: GetStaticProps = async (context) => {
 
   // perform logic or data fetching here
   const res = await fetch(`https://.../data`)
-  const data = await res.json()
+  const posts: Post[] = await res.json()
 
-  if (!data) {
+  if (!posts) {
     return {
       notFound: true,
     }
@@ -28,10 +34,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: { // will be passed to the page component as props
-      data,
+      posts,
       revalidate: 10 // function will run again and gather updated data every 10 seconds
     }, 
   }
+}
+
+function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  // will resolve posts to type Post[]
 }
 ```
 
