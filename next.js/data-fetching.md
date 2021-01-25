@@ -1,6 +1,6 @@
 # Data Fetching with Next.js
 
-[https://nextjs.org/docs/basic-features/data-fetching](Docs)
+[Docs](https://nextjs.org/docs/basic-features/data-fetching)
 
 ## ```getStaticProps``` - Static Generation
 
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 ## SWR - Client-side fetching
 
-The team behind Next.js has created a React hook for data fetching called [https://swr.now.sh/](SWR). We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, re-fetching on interval, and more. And you can use it like so:
+The team behind Next.js has created a React hook for data fetching called [SWR](https://swr.now.sh/). We highly recommend it if you’re fetching data on the client side. It handles caching, revalidation, focus tracking, re-fetching on interval, and more. And you can use it like so:
 
 ```javascript
 import useSWR from 'swr'
