@@ -1,4 +1,5 @@
-# [https://nextjs.org/docs/basic-features/data-fetching](Data Fetching with Next.js)
+# Data Fetching with Next.js
+[https://nextjs.org/docs/basic-features/data-fetching](See Docs)
 
 ## ```getStaticProps``` - Static Generation
 
