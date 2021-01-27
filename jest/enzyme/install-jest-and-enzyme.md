@@ -6,11 +6,14 @@ Use this npm command:
 npm install --save-dev enzyme jest-enzyme @wojtekmaj/enzyme-adapter-react-17
 ```
 
-With the imports of:
+An in ```setupTests.js```:
 
 ```javascript
+import '@testing-library/jest-dom';
 import Enzyme from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+
+Enzyme.configure({ adapter: new Adapter() });
 ```
 
-Note: this adaptor is **not** the official adaptor for react 17 and may not be fully supported.
+Note: this adaptor is **not** the official adapter for react 17 and may not be fully supported.
